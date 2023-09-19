@@ -1,0 +1,501 @@
+body{
+    /*max-width: 1200px;*/ /* Ancho máximo especificado en el enunciado del ejercicio*/
+    margin: 0 auto; /*Centramos el contenido horizontalmente*/
+    padding: 5px; /* Usamos el padding para dar espacio visual a la maqueta*/
+    /*color: rgba(0, 0, 0, 0);*/ /*Transparentamos las fuentes pero no las eliminamos para que los divs tengan contenido*/
+}
+
+/* ESTILOS DEL ENCABEZADO */
+
+header{
+    background-image: url(recursos/header.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 12px 12px 0 12px;
+    margin-bottom: 5px;
+}
+
+.cajaNavegacion{
+    padding: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cajaNav{
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+    padding: 3px;
+}
+
+.logo{
+    width: 4em;
+}
+
+.imgLogo{
+    width: 100%;
+}
+
+.menu{
+    flex-grow: 1;
+}
+
+#botonMenu{
+    display: none;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid rgb(128,128,128);
+    border-radius: 10%;
+    color: rgb(128,128,128);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+#botonMenu i{
+    margin: 3px;
+}
+
+.listaMenu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}
+
+.elementoMenu{
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    box-sizing: border-box;
+    color: rgb(128,128,128);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#cerrarMenu{
+    display: none;
+}
+
+.elementoMenu:hover{
+    color: rgb(240, 102, 102);
+}
+
+.elementoMenu a{
+    text-decoration: none;
+    margin-left: 5px;
+    color: rgb(128,128,128);
+    position: relative;
+    display: inline-block;
+}
+
+.elementoMenu a:hover {
+    color: rgb(240,102,102);
+}
+
+.elementoMenu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgb(240,102,102);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+  
+.elementoMenu a:hover::before {
+    transform: scaleX(1);
+}
+
+.listaSocial{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+
+.elementoSocial{
+    margin: 5px;
+    padding: 5px;
+    font-size: 1.3em;
+}
+
+.elementoSocial i{
+    color: rgb(128,128,128);
+}
+
+.elementoSocial i:hover{
+    color: rgb(240,102,102);
+}
+
+.cajaTitulo{
+    background-color: rgba(0, 0, 0, 0.164);
+    padding: 5px;
+    margin: 60px 35px 0 35px;
+}
+
+.titulo{
+    text-align: center;
+    margin: 5px;
+    padding: 10px 3px 30px 3px;
+    color: white;
+    font-size: 1.7em;
+    letter-spacing: 1.5px;
+}
+
+/* ESTILOS DEL MAIN*/
+
+main{
+    /*background-color: black;*/
+    display: flex;
+    margin-bottom: 12px;
+}
+
+section{
+    background-color: rgb(216,215,215);
+    width: 80%;
+    margin-right: 12px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+article{
+    background-color: white;
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+    width: 48%;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.portadaArticle{
+    position: relative;
+    height: 200px;
+}
+
+.imgArticle{
+    vertical-align: top;
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+
+.fechaArticle{
+    font-family:Arial, Helvetica, sans-serif;
+    color: rgb(255, 233, 107);
+    font-weight: 400;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    margin: 2px;
+    padding: 3px;
+}
+
+.tematicaArticle{
+    background-color: rgb(240,128,128);
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.tematicaArticle span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.4em;
+    color: white;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+    padding: 3px;
+    margin: 15px auto 2px 2px;
+}
+
+.textoColumnas{
+    color: rgb(71, 69, 69);
+    font-weight: 400;
+    column-count:2;
+    column-gap:5px;
+    text-align: start;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.leerMas{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(99, 97, 97);
+    font-weight: 500;
+    text-align: start;
+    text-decoration: none;
+}
+
+.leerMas:hover{
+    color: rgb(240, 102, 102);
+}
+
+.descripcion{
+    width: 100%;
+    background-color: transparent;
+    color: rgb(32, 32, 32);
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+aside{
+    background-color: rgb(216,215,215);
+    width: 20%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.lateral{
+    text-align: center;
+    margin: 15px 5px 8px 5px;
+    padding: 3px;
+}
+
+.tituloAlgo{
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+.textoAlgo{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 2px;
+}
+
+/* ESTILOS DEL FOOTER */
+
+footer{
+    background-color: rgb(216,215,215);
+    padding: 0 10px;
+}
+
+.pie{
+    background-color: rgb(230, 238, 238);
+    padding: 5px;
+    text-align: center;
+    color: rgb(145, 145, 145);
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*********************************************************************************************/
+/********************************** M E D I A Q U E R I E S **********************************/
+/*********************************************************************************************/
+
+/* VERSIÓN TABLET (PARA PANTALLAS CON UN MÁXIMO DE 780PX DE ANCHO) */
+
+@media only screen and (max-width: 780px) {
+   
+    /* ESTILOS DEL ENCABEZADO */
+
+    header{
+        padding: 12px 0 0 0;
+    }
+
+    .cajaNavegacion{
+        padding: 0 15px 0 15px;
+    }
+
+    .logo{
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    .imgLogo{
+        width: 90%;
+        position: absolute;
+        left: 0%;
+        top: 10%;
+    }
+
+    .menu{
+        width: 80%;
+    }
+
+    .listaMenu{
+        margin: 0;
+    }
+
+    .elementoMenu{
+        min-width: 25%;
+    }
+    
+    .social{
+        margin: 0;
+        padding: 0;
+    }
+
+    .listaSocial{
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .elementoSocial{
+        margin: 5px 0;
+        padding: 5px 0;
+        font-size: 1.2em;
+    }
+
+    .cajaTitulo{
+        margin: 30px 0 0 0;
+    }
+
+    .titulo{
+        padding: 15px 3px 25px 3px;
+        font-size: 1.2rem;
+        letter-spacing: 1.1px;
+    }
+    
+    /* ESTILOS DEL MAIN */
+
+    main{
+        flex-direction: column;
+    }
+        
+    section{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 12px;
+    }
+
+    article{
+        flex-basis: 40%;
+    }
+
+    .fechaArticle{
+        font-size: 0.9em;
+    }
+
+    .tematicaArticle{
+        font-size: 0.8em;
+    }
+        
+    aside{
+        width: 100%;
+    }
+
+    /* ESTILOS DEL FOOTER */
+
+}
+
+/* VERSIÓN MÓVIL (PARA PANTALLAS CON UN MÁXIMO DE 510PX DE ANCHO) */
+
+@media only screen and (max-width: 510px) {
+   
+    /* ESTILOS DEL ENCABEZADO */
+    
+    .cajaNavegacion{
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .logo{
+        position: relative;
+        margin: 0;
+        padding: 0;
+    }
+
+    .imgLogo{
+        width: 90%;
+        position: unset;
+        left: 0%;
+        top: 10%;
+    }
+
+    .menu{
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #botonMenu{
+        display: inline-block;
+    }
+
+    .listaMenu{
+        display: none;
+        flex-direction: column;
+        padding: 5px 15px;
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .elementoMenu{
+        color: rgb(204, 204, 204);
+        margin: 10px auto;
+    }
+
+    .elementoMenu a{
+        color: rgb(204, 204, 204);
+        letter-spacing: 1.2px;
+        margin-left: 10px;
+    }
+
+    #cerrarMenu{
+        display: block;
+    }
+
+    #cerrarMenu i{
+        font-size: 1.5em;
+    }
+
+    .social{
+        width: 15%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+
+    .listaSocial{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .elementoSocial{
+        margin: 0px 5px;
+    }
+
+    .titulo{
+        padding: 5px 3px 20px 3px;
+        font-size: 1.1rem;
+    }
+
+    /* ESTILOS DEL MAIN */
+
+    article{
+        flex-basis: 100%;
+    }
+
+    /* ESTILOS DEL FOOTER */
+
+}
+
+/* VERSIÓN MÓVIL (PARA PANTALLAS CON UN MÁXIMO DE 330PX DE ANCHO) */
+
+@media only screen and (max-width: 330px) {
+
+    .cajaNavegacion{
+        justify-content: center;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
+
+    .menu{
+        order: 3;
+        width: 100%;
+    }
+
+}

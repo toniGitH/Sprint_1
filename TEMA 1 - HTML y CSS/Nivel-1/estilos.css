@@ -1,0 +1,188 @@
+body{
+    max-width: 1200px; /* Ancho máximo especificado en el enunciado del ejercicio*/
+    margin: 0 auto; /*Centramos el contenido horizontalmente*/
+    padding: 5px; /* Usamos el padding para dar espacio visual a la maqueta*/
+    color: rgba(0, 0, 0, 0); /*Transparentamos las fuentes pero no las eliminamos para que los divs tengan contenido*/
+}
+
+/* ESTILOS DEL ENCABEZADO */
+
+header{
+    background-color: black;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.cajaNavegacion{
+    background-color: rgb(45,64,89);
+    padding: 5px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cajaNavegacion div{
+    background-color: rgb(234,84,85);
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+    padding: 3px;
+}
+
+.menu{
+    flex-grow: 1;
+}
+
+.cajaTitulo{
+    background-color: rgb(240,123,63);
+    padding: 5px;
+}
+
+.titulo{
+    background-color: rgb(254,212,96);
+    text-align: center;
+    margin: 5px;
+    padding: 3px;
+}
+
+/* ESTILOS DEL MAIN*/
+
+main{
+    background-color: black;
+    padding: 12px;
+    display: flex;
+    margin-bottom: 12px;
+}
+
+section{
+    background-color: rgb(78,78,106);
+    width: 70%;
+    margin-right: 12px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+article{
+    background-color: rgb(31,108,176);
+    text-align: center;
+    margin: 5px;
+    padding: 3px;
+    width: 48%;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+section :last-child{
+    background-color: rgb(112,163,196);
+    width: 100%;
+}
+
+aside{
+    background-color: rgb(247,63,82);
+    width: 30%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.lateral{
+    background-color: rgb(254,234,133);
+    text-align: center;
+    margin: 5px 5px 8px 5px;
+    padding: 3px;
+
+}
+
+/* ESTILOS DEL FOOTER */
+
+footer{
+    background-color: black;
+    padding: 12px;
+}
+
+.pie{
+    background-color: rgb(230,175,46);
+    padding: 5px;
+    text-align: center;
+}
+
+/*********************************************************************************************/
+/********************************** M E D I A Q U E R I E S **********************************/
+/*********************************************************************************************/
+
+/* VERSIÓN TABLET (PARA PANTALLAS CON UN MÁXIMO DE 780PX DE ANCHO) */
+
+@media only screen and (max-width: 780px) {
+   
+    /* ESTILOS DEL ENCABEZADO */
+    
+    /* ESTILOS DEL MAIN */
+
+        main{
+            background-color: rgb(254,255,3);
+            flex-direction: column;
+        }
+        
+        section{
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 12px;
+        }
+
+        article{
+            flex-basis: 40%;
+        }
+        
+        aside{
+            width: 100%;
+        }
+
+    /* ESTILOS DEL FOOTER */
+
+}
+
+/* VERSIÓN MÓVIL (PARA PANTALLAS CON UN MÁXIMO DE 480PX DE ANCHO) */
+
+@media only screen and (max-width: 480px) {
+   
+    /* ESTILOS DEL ENCABEZADO */
+    
+    .cajaNavegacion{
+        flex-direction: column;
+    }
+
+    /* ESTILOS DEL MAIN */
+
+    main{
+        background-color: rgb(254,226,40);
+    }
+    
+    section{
+        background-color: rgb(9,80,111);
+    }
+
+    article{
+        background-color: rgb(97,149,156);
+        flex-basis: 100%;
+    }
+
+    section :last-child{
+        background-color: rgb(163,221,203);
+    }
+
+    aside{
+        background-color: rgb(253,123,84);
+    }
+
+    .lateral{
+        background-color: rgb(253,179,107);
+    }
+
+    /* ESTILOS DEL FOOTER */
+
+    .pie{
+        background-color: rgb(253,179,107);
+    }
+
+}
