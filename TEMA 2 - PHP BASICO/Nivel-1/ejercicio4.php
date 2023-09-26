@@ -15,7 +15,10 @@
         return $numero;
     }
 
-    function contar($paramHasta, $paramPaso){
+    /* Función que recibe dos parámetros. Uno de ellos ($paramHasta) tomará un valor por defecto (10) en caso de que no se le asigne
+       un valor concreto en la llamada a la función. Este tipo de parámetros se deben poner después de los parámetros que no tienen 
+       valor por defecto*/
+    function contar($paramPaso, $paramHasta=10){ 
         echo "Empezamos a contar...\n\n";
         sleep(2); // Introduce un lapso de tiempo hasta ejecutar la siguiente instrucción
         for ($num=0; $num<=$paramHasta ; $num+=$paramPaso) { 
@@ -28,16 +31,15 @@
 
     // RESTO DEL PROGRAMA:
 
-    $hasta=10; // Valor por defecto hasta el que contar si no se especifica.
+    $paso=pedirNumero("¿De cuánto en cuánto quieres contar (de 1en1, de 2en2, de 3en3, ...)?: ");
 
     $respuesta=readline("¿Deseas establecer hasta que número contar (s/n)?: ");
 
     if ($respuesta=="s" || $respuesta=="S") {
         $hasta=pedirNumero("¿Hasta qué número quieres contar?: ");
+        contar($paso, $hasta);
     }
-
-    $paso=pedirNumero("¿De cuánto en cuánto quieres contar (de 1en1, de 2en2, de 3en3, ...)?: ");
-
-    contar($hasta, $paso);
-
+    else{
+        contar($paso);
+    }
 ?>

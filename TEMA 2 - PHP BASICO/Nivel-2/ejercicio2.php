@@ -1,14 +1,13 @@
 <?php 
 
-    // Declaración e inicialización de las variables y los arrays que vamos a necesitar:
-    $mensajes=["Cuántas tabletas de chocolate se han comprado?: ",
-            "Cuántos chicles se han comprado?: ",
-            "Cuántos caramelos se han comprado?: "
-            ];
-    $productos=["chocolates", "chicles", "caramelos"];
-    $precios=[1, 0.5, 1.5];
+    // Declaración e inicialización de un array asociativo "producto=>precio":
+
+    $tienda=["chocolates" => 1, 
+             "chicles" => 0.5,
+             "caramelos" => 1.5];
 
     // Definición de las funciones que vamos a necesitar:
+
     function pedirNumero($paramMensaje){
         $numero=readline($paramMensaje);
         if (!is_numeric($numero) || ($numero<0)) {
@@ -19,32 +18,35 @@
         return $numero;
     }
 
-    function crearCompra($paramMensajes){
-        for ($i=0; $i<3 ; $i++) { 
-            $unidades[$i]=(pedirNumero($paramMensajes[$i]));
+    function crearCompra($paramTienda){
+        foreach ($paramTienda as $producto => $precio) {
+            $unidades=(pedirNumero("Introduce cuántos $producto se han comprado: "));
+            $compra[$producto] = ["precio" => $precio, "cantidad" => $unidades];
         }
-        return $unidades;
+        return $compra;
     }
 
-    function calcularTotal($paramUnidadesCompradas, $paramPrecios){
-        $suma=0;
-        for ($i=0; $i<count($paramUnidadesCompradas) ; $i++) { 
-            $suma+=($paramUnidadesCompradas[$i]*$paramPrecios[$i]);
-        }
-        return $suma;
+    function calcularImporte($paramCompra){
+        $importeTotal = array_reduce($paramCompra, function($suma, $producto) {
+                                                        return $suma + ($producto["cantidad"] * $producto["precio"]);
+                                                   }
+                                    ,0);
+        return $importeTotal;
     }
 
-    function imprimirCompra($paramUnidadesCompradas, $paramProductos, $paramPrecios, $paramSumaTotal){
-        echo "\nCOMPRA REALIZADA: \n";
-        for ($i=0; $i<count($paramUnidadesCompradas) ; $i++) { 
-            echo $paramUnidadesCompradas[$i] . " " . $paramProductos[$i] . " x " . $paramPrecios[$i] . " euros/ud = " . ($paramUnidadesCompradas[$i]*$paramPrecios[$i]) . " euros.\n";
+    function imprimirTicket($paramCompra){
+        echo "\n-- TICKET DE COMPRA --\n";
+        foreach ($paramCompra as $producto => $datos) {
+            echo $datos["cantidad"] . " " . $producto . " x " . $datos["precio"]. " eur/ud = " . $datos["cantidad"]*$datos["precio"] . " euros\n";
         }
-        echo "\nEl valor total de la compra es de $paramSumaTotal euros.\n\n";
+        echo "-----------------------------------\n";
+        echo "Importe total: " . calcularImporte($paramCompra) . " euros.\n";
     }
 
-    // Resto del programa
-    $unidadesCompradas=crearCompra($mensajes);
-    $sumaTotal=calcularTotal($unidadesCompradas, $precios);
-    imprimirCompra($unidadesCompradas, $productos, $precios, $sumaTotal);
+    // Comprobación:
+    
+    $compra = crearCompra($tienda);
+    $importe = calcularImporte($compra);
+    imprimirTicket($compra);
 
 ?>

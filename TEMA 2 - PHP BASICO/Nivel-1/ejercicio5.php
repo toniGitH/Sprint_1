@@ -16,21 +16,23 @@
         return ($paramValor/10)*100;
     }
 
-    // RESTO DEL PROGRAMA:
-
-    $nota = pedirNumero("Escribe tu nota. Debe ser un número entero o decimal positivo entre 0 y 10: ");
-
-    if ($nota>=6) {
-        echo "Has obtenido un " . calculaPorcentaje($nota) . "%. Estás en PRIMERA DIVISIÓN";
-    }
-    else if ($nota>=4.5 && $nota<6) {
-        echo "Has obtenido un " . calculaPorcentaje($nota) . "%. Estás en SEGUNDA DIVISIÓN";
-    }
-    else if ($nota>=3.3 && $nota<4.5) {
-        echo "Has obtenido un " . calculaPorcentaje($nota) . "%. Estás en TERCERA DIVISIÓN";
-    }
-    else{
-        echo "Has obtenido un " . calculaPorcentaje($nota) . "%. Estás SUSPENDIDO";
+    function evaluarNota($paramNota){
+        if ($paramNota<3.3) {
+            echo "Has obtenido un " . calculaPorcentaje($paramNota) . "%. Estás SUSPENDIDO";
+        }
+        else if($paramNota<4.5){
+            echo "Has obtenido un " . calculaPorcentaje($paramNota) . "%. Estás en TERCERA DIVISIÓN";
+        }
+        else if($paramNota<6){
+            echo "Has obtenido un " . calculaPorcentaje($paramNota) . "%. Estás en SEGUNDA DIVISIÓN";
+        }
+        else{
+            echo "Has obtenido un " . calculaPorcentaje($paramNota) . "%. Estás en PRIMERA DIVISIÓN";
+        }
     }
 
+    // COMPROBACIÓN:
+
+    evaluarNota($nota = pedirNumero("Escribe tu nota. Debe ser un número entero o decimal positivo entre 0 y 10: "));
+    
 ?>

@@ -14,34 +14,25 @@
         }
         return $numero;
     }
-    
-    function calculaCoste($paramMinutos, $paramRemanente){
 
-        if ($paramMinutos<=3 && $paramRemanente==0) {
-            $coste = 10;
+    function calcularCoste($paramDuracion){
+        $minutos=floor($paramDuracion/60);
+        $segundos=$paramDuracion%60;
+        
+        if ($paramDuracion<180) {
+            echo "El coste de una llamada de " . $minutos . " minutos y " . $segundos . " segundos es de 10 céntimos.";
         }
-        else{
-            if ($paramRemanente>0) {
-                $coste = 15 + ($paramMinutos-3)*5;
+        else {
+            if ($segundos>0) {
+                echo "El coste de una llamada de " . $minutos . " minutos y " . $segundos . " segundos es de " . (15 + ($minutos-3)*5) . " céntimos";
             } else{
-                $coste = 10 + ($paramMinutos-3)*5;
+                echo "El coste de una llamada de " . $minutos . " minutos y " . $segundos . " segundos es de " . (10 + ($minutos-3)*5) . " céntimos";
             }
-        }
-
-        return $coste;
+        } 
     }
 
-    // RESTO DEL PROGRAMA:
+    // COMPROBACION:
 
-    $duracion = pedirNumero("Indica, en segundos, cuánto ha durado la llamada: ");
-    $minutosLlamada = floor($duracion/60);
-    $segundosRemanentes = $duracion%60;
-    
-    if ($segundosRemanentes>0) {
-        echo "El coste de una llamada de $minutosLlamada minutos y $segundosRemanentes segundos es de ". calculaCoste($minutosLlamada, $segundosRemanentes) ." céntimos";
-    }
-    else{
-        echo "El coste de una llamada de $minutosLlamada minutos es de ". calculaCoste($minutosLlamada, $segundosRemanentes) ." céntimos";
-    }
+    calcularCoste(pedirNumero("Introduce el tiempo de duración de la llamada en segundos: "));
 
 ?>
