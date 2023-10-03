@@ -10,6 +10,6 @@
     //$palabrasPares = array_filter($palabras, fn($elemento)=>strlen($elemento)%2==0);
 
     // Comprobación
-    var_dump($palabrasPares2);
+    var_dump($palabrasPares);
 
 ?>
