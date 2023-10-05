@@ -1,0 +1,19 @@
+Justificación de la solución adoptada.
+--------------------------------------
+
+Partimos de la situación del ejercicio1 del Nivel 2, en el que hay una clase Shape abstracta, de la que heredan dos clases hijas, 
+Triangulo y Rectangulo.
+
+Dado que para resolver este ejercicio1 del Nivel 3 se pedía introducir un nuevo tipo de objeto (Circulo) que no tenía propiedades en común con Triangulo y Rectangulo (excepto tipoFigura, que la he añadido pero no tiene mayor relevancia), he preferido NO 
+crear la nueva clase Circulo como descendiente de la clase Shape, y crearla como una clase independiente de Shape.
+
+Esto supone que la declaración de la clase Shape como "abstract" sigue teniendo efecto sobre las clases Triangulo y Rectangulo
+pero no aporta nada respecto a la nueva clase Circulo. Es decir, que el declarar la clase Shape como "abstract" no condiciona 
+en absoluto el diseño de la clase Circulo, que es independiente de Shape. No me obliga a crear un método area() en la clase 
+Circulo.
+
+Por ello, y con el fin de poder introducir un nuevo concepto del tema de POO2 que fuera aplicable al programa en su conjunto,
+he decidido eliminar el método "abstract" de la clase Shape, Triangulo y Rectangulo y en su lugar aplicar un "interface" que sí
+puedo aplicar tanto a la clase Triangulo, como a Rectangulo, como a Circulo, dado que aunque sean clases que no estén vinculadas
+entre sí (Rectangulo y Triangulo vs Circulo), el concepto de "interface" se puede aplicar a clases que no estén relacionadas
+directamente entre sí. 
