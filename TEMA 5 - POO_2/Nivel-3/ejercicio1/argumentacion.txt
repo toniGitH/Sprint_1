@@ -4,8 +4,7 @@ Justificación de la solución adoptada.
 Partimos de la situación del ejercicio1 del Nivel 2, en el que hay una clase Shape abstracta, de la que heredan dos clases hijas, 
 Triangulo y Rectangulo.
 
-Dado que para resolver este ejercicio1 del Nivel 3 se pedía introducir un nuevo tipo de objeto (Circulo) que no tenía propiedades en común con Triangulo y Rectangulo (excepto tipoFigura, que la he añadido pero no tiene mayor relevancia), he preferido NO 
-crear la nueva clase Circulo como descendiente de la clase Shape, y crearla como una clase independiente de Shape.
+Dado que para resolver este ejercicio1 del Nivel 3 se pedía introducir un nuevo tipo de objeto (Circulo) que no tenía propiedades en común con Triangulo y Rectangulo, he preferido NO crear la nueva clase Circulo como descendiente de la clase Shape, y crearla como una clase independiente de Shape.
 
 Esto supone que la declaración de la clase Shape como "abstract" sigue teniendo efecto sobre las clases Triangulo y Rectangulo
 pero no aporta nada respecto a la nueva clase Circulo. Es decir, que el declarar la clase Shape como "abstract" no condiciona 

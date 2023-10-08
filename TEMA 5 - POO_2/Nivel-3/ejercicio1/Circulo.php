@@ -5,16 +5,9 @@
     class Circulo implements CalcularArea{ // Esta clase NO hereda de la clase Shape
 
         protected $radio;
-        protected $tipoFigura;
 
         function __construct($paramRadio){
             $this->radio=$paramRadio;
-            $this->tipoFigura="círculo";
-        }
-
-        // MÉTODOS GETTERS (en principio, no necesitaré el getter de radio)
-        function getTipoFigura(){
-            return $this->tipoFigura;
         }
 
         function area(){ // Función obligatoria por implementar la interface CalcularArea

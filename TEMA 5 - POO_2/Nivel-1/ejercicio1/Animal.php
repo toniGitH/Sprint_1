@@ -3,19 +3,13 @@
     abstract class Animal{
 
         private $nombreAnimal;
-        private $tipoAnimal;
 
-        function __construct($paramNombreAnimal, $paramTipoAnimal){
+        function __construct($paramNombreAnimal){
             $this->nombreAnimal=$paramNombreAnimal;
-            $this->tipoAnimal=$paramTipoAnimal;
         }
 
         function getNombreAnimal(){
             return $this->nombreAnimal;
-        }
-
-        function getTipoAnimal(){
-            return $this->tipoAnimal;
         }
 
         // Declaramos un método llamado makeSound() como "abstract".

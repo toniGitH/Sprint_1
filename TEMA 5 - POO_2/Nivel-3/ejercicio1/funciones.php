@@ -94,28 +94,17 @@
 
     function calcularAreaRectangulo(){
         $figura = new Rectangulo(pedirNumero("Introduce el alto del rectángulo: \n"), pedirNumero("Introduce el ancho del rectángulo: \n"));
-        echo "El área del " . $figura->getTipoFigura() . " es " . $figura->area() . "\n";
+        echo "El área del " . strtolower(get_class($figura)) . " es " . $figura->area() . "\n";
     }
 
     function calcularAreaTriangulo(){
-        $figura = new Triangulo(pedirNumero("Introduce la altura del triangulo: \n"), pedirNumero("Introduce la base del triangulo: \n"));
-        echo "El área del " . $figura->getTipoFigura() . " es " . $figura->area() . "\n";
+        $figura = new Triangulo(pedirNumero("Introduce la altura del triángulo: \n"), pedirNumero("Introduce la base del triángulo: \n"));
+        echo "El área del " . strtolower(get_class($figura)) . " es " . $figura->area() . "\n";
     }
 
     function calcularAreaCirculo(){
         $figura = new Circulo(pedirNumero("Introduce el radio del círculo: \n"));
-        echo "El área del " . $figura->getTipoFigura() . " es " . $figura->area() . "\n";
+        echo "El área del " . strtolower(get_class($figura)) . " es " . $figura->area() . "\n";
     }
-
-/* IMPORTANTE: en las funciones calcularAreaRectangulo, calcularAreaTriangulo y calcularAreaCirculo sí que necesito el 
-    método getter getTipoFigura() para acceder a la propiedad $tipoFigura de los objetos de tipo Triangulo, Rectangulo y 
-    Circulo, porque como son propiedades "protected", la única manera que tengo para acceder a ellas DESDE FUERA de las 
-    clases padre e hijas es mediante métodos getters que DEBEN estar definidos en la clase padre o en las hijas (en este caso,
-    están declaradas en el padre, y las hijas también los tienen porque las han heredado del padre en el caso de Triangulo y
-    Rectángulo, y en la clase Circulo está también definido).
-    Si por algún motivo, los métodos getters de Triangulo y Rectangulo no estuvieran definidos en el padre, pero sí en los 
-    hijos, también funcionaría.
-*/
-
 
 ?>
