@@ -1,0 +1,2 @@
+Crea una clase que contenga los métodos getFile() y getDir() que devuelva el path entero y el directorio del archivo 
+utilizando constantes mágicas.

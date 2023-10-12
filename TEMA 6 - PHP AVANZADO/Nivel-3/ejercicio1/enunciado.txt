@@ -1,0 +1,4 @@
+Crea una clase que represente un recurso didáctico de esa especialidad.
+Los recursos tendrán que tener un nombre, un tema (que sólo podrá ser PHP, CSS, HTML, SQL, Laravel) una URL y un tipo de 
+recurso (Archivo, Artículo web, Vídeo).
+Implementa tanto el tema como el tipo de recurso con enums.

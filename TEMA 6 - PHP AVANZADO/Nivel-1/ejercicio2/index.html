@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Nivel 1</title>
+    <style>
+        .contenedor{
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: tomato;
+            color: white;
+        }
+        fieldset{
+            padding: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            border: 2px dashed white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <form action="crearSesion.php" method="post">
+
+            <fieldset>
+
+                <legend>IDENTIFÍCATE</legend>
+
+                <div id="nom">
+                    <label for="idNombre">NOMBRE:</label>
+                    <input type="text" name="nombre" id="idNombre">
+                </div>
+                <div id="user">
+                    <label for="idUsuario">USUARIO:</label>
+                    <input type="text" name="usuario" id="idUsuario">
+                </div>
+
+                <div id="submit">
+                    <input type="submit" value="ENVIAR">
+                </div>
+                
+            </fieldset>
+            
+        </form>
+
+    </div>
+    
+</body>
+</html>

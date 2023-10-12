@@ -1,0 +1,1 @@
+Sobreescribe alguna de las lógicas de entre todos los métodos mágicos existentes (que no sea __construct)

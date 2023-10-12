@@ -1,0 +1,2 @@
+Mejora el ejercicio anterior haciendo que el username se guarde en una variable de sesión.
+Debe mostrarse el username por pantalla mediante el acceso a esta variable de sesión.
