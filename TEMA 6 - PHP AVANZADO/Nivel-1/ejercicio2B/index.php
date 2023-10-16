@@ -3,7 +3,7 @@
     session_start();
 
     $nombrePersona="Invitado";
-    $nombreUsuario="Usuario";
+    $nombreUsuario="Invitado";
 
     if (isset($_SESSION["name"]) && isset($_SESSION["user"])) {
         $nombrePersona = $_SESSION["name"];
@@ -75,11 +75,11 @@
 
                 <div id="nom">
                     <label for="idNombre">NOMBRE:</label>
-                    <input type="text" name="nombre" id="idNombre">
+                    <input type="text" name="nombre" id="idNombre" required>
                 </div>
                 <div id="user">
                     <label for="idUsuario">USUARIO:</label>
-                    <input type="text" name="usuario" id="idUsuario">
+                    <input type="text" name="usuario" id="idUsuario" required>
                 </div>
 
                 <div id="submit">
