@@ -1,0 +1,24 @@
+
+FASES DEL TDD:
+    * FASE ROJA: es el código que hay en el archivo NotaTest.php, dentro de la carpeta tests
+    * FASE VERDE: es el código que hay en el archivo Nota.php, dentro de la carpera src
+    * FASE REFACTORIZACIÓN: es el código "definitivo" del programa, el archivo EvaluaNota.php, dentro de la carpeta src
+
+
+PUNTO DE PARTIDA:
+    Las funciones que pienso que mi programa puede necesitar son:
+        1- función de comprobación de que la nota introducida esté entre 0 y 10
+        2- función de conversión de ese número a porcentaje sobre 100
+        3- función de verificación del grado del alumno en función de la nota (porcentaje)
+    En función de estos datos, primero crearé los tests, luego el código mínimo para superarlos y dinalmente el código
+    definitivo.
+
+
+IMPORTANTE: como el ejercicio5 que ahora se pide resolver con TDD, en su momento lo resolví sin clases poo, he decidido
+resolver el ejercicio actual de la misma forma (sin usar clases), aunque el código final en este ejercicio quedará algo
+diferente, porque no incluiré una entrada manual de datos por parte del usuario, para que los tests sean más automáticos 
+y se ejecuten sin la intervención del usuario.
+
+
+
+

@@ -1,0 +1,4 @@
+
+* El ejercicio a presentar es el que hay en la carpeta ejercicio1.
+
+* El ejercicio1_v2 solo tiene variaciones y anotaciones relativas al uso de namespace
